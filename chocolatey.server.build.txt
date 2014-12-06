@@ -16,9 +16,9 @@ cinst IIS-BasicAuthentication -Source WindowsFeatures
 cinst IIS-ISAPIExtensions -Source WindowsFeatures
 cinst IIS-ISAPIFilter -Source WindowsFeatures
 cinst IIS-NetFxExtensibility -Source WindowsFeatures
-#cinst IIS-NetFxExtensibility45 -Source WindowsFeatures #2012 only
+cinst IIS-NetFxExtensibility45 -Source WindowsFeatures #2012 only
 cinst IIS-ASPNET -Source WindowsFeatures
-#cinst IIS-ASPNET45 -Source WindowsFeatures #2012 only
+cinst IIS-ASPNET45 -Source WindowsFeatures #2012 only
 Install-WindowsUpdate -AcceptEula
 if (Test-PendingReboot) { Invoke-Reboot }
 cinst DotNet4.5.2
