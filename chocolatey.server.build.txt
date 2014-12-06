@@ -10,6 +10,7 @@ Enable-RemoteDesktop
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles
 if (Test-PendingReboot) { Invoke-Reboot }
 cinst IIS-WebServerRole -Source WindowsFeatures
+cinst IIS-IIS6ManagementCompatibility -Source WindowsFeatures
 cinst IIS-Metabase -Source WindowsFeatures
 cinst IIS-BasicAuthentication -Source WindowsFeatures
 cinst IIS-ISAPIExtensions -Source WindowsFeatures
