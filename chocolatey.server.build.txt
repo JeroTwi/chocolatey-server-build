@@ -19,16 +19,13 @@ cinst IIS-NetFxExtensibility -Source WindowsFeatures
 cinst IIS-NetFxExtensibility45 -Source WindowsFeatures #2012 only
 cinst IIS-ASPNET -Source WindowsFeatures
 cinst IIS-ASPNET45 -Source WindowsFeatures #2012 only
-Install-WindowsUpdate -AcceptEula
-if (Test-PendingReboot) { Invoke-Reboot }
 cinst DotNet4.5.2
-cinst PowerShell4
-if (Test-PendingReboot) { Invoke-Reboot }
 Install-WindowsUpdate -AcceptEula
 if (Test-PendingReboot) { Invoke-Reboot }
 cinst chocolatey
 cinst chocolatey.server
 cinst nuget.commandline
 cinst SublimeText2.app
-Install-WindowsUpdate -AcceptEula
-if (Test-PendingReboot) { Invoke-Reboot }
+Remove-Item C:\inetpub\wwwroot\* -Recurse -Force
+Copy-Item C:\ProgramData\chocolatey\lib\chocolatey.server.0.1.1\tools\chocolatey.server\* C:\inetpub\wwwroot -Recurse -Force
+& START http://localhost
