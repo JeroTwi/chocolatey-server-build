@@ -32,4 +32,7 @@ cinst poshgit
 cinst SublimeText2.app
 Remove-Item C:\inetpub\wwwroot\* -Recurse -Force
 Copy-Item C:\ProgramData\chocolatey\lib\chocolatey.server.0.1.1\tools\chocolatey.server\* C:\inetpub\wwwroot -Recurse -Force
+& C:\Windows\System32\inetsrv\appcmd.exe set config /section:staticContent /+"[fileExtension='.msu',mimeType='application/octet-stream']"
+& C:\Windows\System32\inetsrv\appcmd.exe set config /section:staticContent /+"[fileExtension='.nupkg',mimeType='application/zip']"
+& C:\Windows\System32\inetsrv\appcmd.exe set config /section:staticContent /+"[fileExtension='.ps1',mimeType='text/plain']"
 & START http://localhost
