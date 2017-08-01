@@ -31,5 +31,5 @@ cinst git
 cinst poshgit
 cinst SublimeText2.app
 Remove-Item C:\inetpub\wwwroot\* -Recurse -Force
-Copy-Item C:\ProgramData\chocolatey\lib\chocolatey.server.0.1.1\tools\chocolatey.server\* C:\inetpub\wwwroot -Recurse -Force
+Copy-Item C:\ProgramData\chocolatey\lib\chocolatey.server\tools\chocolatey.server\* C:\inetpub\wwwroot -Recurse -Force
 & START http://localhost
